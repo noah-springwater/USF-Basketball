@@ -1,0 +1,16 @@
+ul {
+  width: 20rem;
+  margin: 0;
+  padding: 0;
+  .new-player-form {
+    padding-bottom: 2rem;
+  }
+
+  .player {
+    ul {
+      display: inline-block;
+      padding: 0;
+      width: 75%;
+    }
+  }
+}

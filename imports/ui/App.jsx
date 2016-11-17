@@ -32,19 +32,25 @@ class App extends Component {
   render() {
     return (
       <div className="container">
-        <header>
-          <AccountsUIWrapper />
-          <h1>USF Basketball ({this.props.players.length})</h1>
-        </header>
-        { this.props.currentUser &&
-          <div className="menu">
+      <AccountsUIWrapper />
+      { this.props.currentUser ?
+        <div className="menu">
+          <header>
+            <h1>USF Basketball ({this.props.players.length})</h1>
+          </header>
             <ul>
-              <form className="new-task" onSubmit={this.handleSubmit.bind(this)} >
+              <form className="new-player-form" onSubmit={this.handleSubmit.bind(this)} >
                  <input type="text" ref="textInput" placeholder="Player Name" />
               </form>
               {this.renderPlayers()}
             </ul>
+        </div> :
+        <div className="landing-page">
+          <div id="title">usf shooting</div>
+          <div id="landing-logo">
+            <img src="../images/dons-logo.png" />
           </div>
+        </div>
         }
       </div>
     );
@@ -60,7 +66,7 @@ export default createContainer(() => {
   Meteor.subscribe('players');
 
   return {
-    players: Players.find({}, { sort: { createdAt: -1 } }).fetch(),
+    players: Players.find({}, { sort: { name: 1 } }).fetch(),
     currentUser: Meteor.user(),
   }
 }, App);

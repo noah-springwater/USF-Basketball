@@ -1,11 +1,32 @@
 @import 'mediaqueries';
 @import 'grid';
+@import 'variables';
+@import 'playerList';
 
-@media #{$medium-up} {
+html {
+  font-size: 62.5%;
+}
 
 header {
   background-color: black;
   text-align: center
 }
 
-};
+.landing-page {
+  transform: translateY(50%);
+
+  #title {
+    font-size: 8rem;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  #landing-logo {
+    img {
+      position: relative;
+      margin: 0 auto;
+      display: block;
+      width: 25rem;
+    }
+  }
+}

@@ -11,7 +11,7 @@ export default class Player extends Component {
 
   render() {
     return (
-      <div className="hello">
+      <div className="player">
         <ul>{this.props.player.name}</ul>
         <button className="delete" onClick={this.deletePlayer.bind(this)}>&times;</button>
       </div>
