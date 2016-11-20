@@ -40,8 +40,8 @@ export default class Player extends Component {
   render() {
     return (
       <div className="player">
-        {/* if the user id mataches the creater id then make name editable/deletable */}
-        {/* if not then just render the names in a ul */}
+        {/* if the user id mataches the creater id then make name editable/deletable */
+        /* if not then just render the names in a ul */}
         { this.props.currentUser._id == this.props.player.owner ?
 
          !(this.state.editable) ?
