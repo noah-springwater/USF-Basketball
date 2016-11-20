@@ -26,11 +26,11 @@ Meteor.methods({
     })
   },
 
-  'players.update'(playerId, newName) {
+  'players.update'(playerId, editedName) {
     check(playerId, String);
-    check(newName, String);
+    check(editedName, String);
 
-    Players.update(playerId, { $set: { name: newName }})
+    Players.update(playerId, { $set: { name: editedName }})
   },
 
   'players.remove'(playerId) {
