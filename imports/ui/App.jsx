@@ -9,6 +9,7 @@ import Player from './Player.jsx';
 import AccountsUIWrapper from './AccountsUIWrapper.jsx';
 
 class App extends Component {
+
   handleSubmit(e) {
     e.preventDefault();
 
@@ -42,7 +43,7 @@ class App extends Component {
               <form className="new-player-form" onSubmit={this.handleSubmit.bind(this)} >
                  <input type="text" ref="textInput" placeholder="Player Name" />
               </form>
-              {this.renderPlayers()}
+                {this.renderPlayers()}
             </ul>
         </div> :
         <div className="landing-page">

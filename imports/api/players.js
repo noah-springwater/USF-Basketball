@@ -26,6 +26,13 @@ Meteor.methods({
     })
   },
 
+  'players.update'(playerId, newName) {
+    check(playerId, String);
+    check(newName, String);
+
+    Players.update(playerId, { $set: { name: newName }})
+  },
+
   'players.remove'(playerId) {
     check(playerId, String);
 
